@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  FileText,
   CheckCircle,
   ArrowRight,
   Globe,
@@ -92,11 +90,7 @@ export default function BackOfficePage() {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-600/10 via-transparent to-transparent opacity-50" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center"
-          >
+          <div className="text-center">
             <Badge variant="outline" className="mb-8 border-indigo-500/30 bg-indigo-500/10 text-indigo-400 px-4 py-1 uppercase tracking-widest text-[10px] font-bold">
               Back Office Operations
             </Badge>
@@ -112,7 +106,7 @@ export default function BackOfficePage() {
                 <Link href="/contact">Start Your Project <ArrowRight className="ml-2 w-5 h-5" /></Link>
               </Button>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-8 md:gap-16">
               <div className="flex items-center gap-2 text-white/50 text-sm font-bold">
                 <Globe className="w-5 h-5 text-indigo-500" />
@@ -127,7 +121,7 @@ export default function BackOfficePage() {
                 24/7 Capacity
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -141,12 +135,8 @@ export default function BackOfficePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {quickValues.map((val, idx) => (
-              <motion.div
+              <div
                 key={val.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
                 className="glass-card p-8 group hover:border-indigo-500/30 transition-colors"
               >
                 <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -154,7 +144,7 @@ export default function BackOfficePage() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 font-display">{val.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{val.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -171,11 +161,8 @@ export default function BackOfficePage() {
 
           <div className="space-y-6">
             {comparisons.map((item, idx) => (
-              <motion.div
+              <div
                 key={item.label}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
                 className="grid md:grid-cols-2 gap-4"
               >
                 <div className="glass-card p-6 border-red-500/10 bg-red-500/[0.02]">
@@ -189,7 +176,7 @@ export default function BackOfficePage() {
                   </div>
                   <p className="text-white/80 text-sm font-medium">{item.admirerx}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -205,12 +192,8 @@ export default function BackOfficePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {expectations.map((item, idx) => (
-              <motion.div
+              <div
                 key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
                 className="flex flex-col gap-6"
               >
                 <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
@@ -221,7 +204,7 @@ export default function BackOfficePage() {
                   <p className="text-indigo-400 font-bold text-xs uppercase tracking-wider mb-4">{item.subtitle}</p>
                   <p className="text-white/50 text-sm leading-relaxed">{item.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -235,7 +218,7 @@ export default function BackOfficePage() {
             <span className="text-indigo-500 font-bold uppercase tracking-widest text-[10px] mb-4 block">Why Choose Us</span>
             <h2 className="text-3xl md:text-5xl font-bold font-display mb-4">Why Choose AdmirerX for <span className="text-gradient">Back Office</span></h2>
           </div>
-          
+
           <div className="space-y-8 text-white/60 leading-relaxed text-sm">
             <p>
               Our service portfolio encompasses finance and accounting operations including accounts payable, accounts receivable, general ledger maintenance, expense management, payroll processing, tax support, and financial reporting. We process invoices, purchase orders, credit memos, and payment transactions with exceptional accuracy and efficiency.
@@ -259,7 +242,7 @@ export default function BackOfficePage() {
               Transparent reporting provides real-time visibility. Client portals display processing status, volume metrics, quality scores, and SLA compliance. Automated alerts notify stakeholders of exceptions requiring attention. Monthly business reviews analyze trends and identify optimization opportunities.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
             <div className="glass-card p-4 text-center">
               <ShieldCheck className="w-5 h-5 text-indigo-500 mx-auto mb-2" />
@@ -284,12 +267,7 @@ export default function BackOfficePage() {
       {/* CTA Section */}
       <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="glass-card p-12 md:p-20 text-center relative overflow-hidden group"
-          >
+          <div className="glass-card p-12 md:p-20 text-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-indigo-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-5xl font-bold font-display mb-8">Ready to Transform Your Business?</h2>
@@ -300,10 +278,10 @@ export default function BackOfficePage() {
                 <Link href="/contact">Get Started Today <ArrowRight className="ml-2 w-5 h-5" /></Link>
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
-      
+
       {/* Form Section */}
       <section className="py-24 bg-[#020205]">
         <div className="max-w-3xl mx-auto px-4">
@@ -312,7 +290,7 @@ export default function BackOfficePage() {
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-4">Let&apos;s Build Something <span className="text-gradient">Remarkable</span></h2>
             <p className="text-white/40">Our team will respond within 24 hours.</p>
           </div>
-          
+
           <form className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <input type="text" placeholder="Full Name *" className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors" />
@@ -323,14 +301,14 @@ export default function BackOfficePage() {
               <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors" />
             </div>
             <textarea placeholder="Tell us about your project" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm focus:outline-none focus:border-indigo-500/50 transition-colors resize-none"></textarea>
-            
+
             <div className="glass-card p-4 border-dashed">
               <div className="flex items-center justify-center gap-2 text-white/40 text-sm">
                 <Upload className="w-4 h-4" />
                 <span>Click to upload PDF/DOC - Max 10 MB</span>
               </div>
             </div>
-            
+
             <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-14 font-bold">
               Submit Inquiry
             </Button>
@@ -338,7 +316,7 @@ export default function BackOfficePage() {
               * Your information is secure and will never be shared.
             </p>
           </form>
-          
+
           <div className="flex justify-center gap-12 mt-16  opacity-30">
             <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
               <Clock className="w-4 h-4" /> 24-Hour response time
